@@ -104,15 +104,16 @@ function coverTexture() {
 
   g.fillStyle = '#e9b44c';
   g.textAlign = 'center';
-  g.font = '600 150px Georgia, serif';
-  g.fillText('P·J', 256, 330);
-  g.font = 'italic 30px Georgia, serif';
-  g.fillText('her story so far', 256, 400);
-  g.font = '20px Georgia, serif';
-  g.fillText('— · —', 256, 470);
+  g.font = '600 170px Georgia, serif';
+  g.fillText('P', 256, 240);
+  g.fillText('J', 256, 465);
+  g.font = '60px Georgia, serif';
+  g.fillText('·', 256, 330);
+  g.font = 'italic 32px Georgia, serif';
+  g.fillText('her story so far', 256, 560);
   const tex = new THREE.CanvasTexture(c);
   tex.center.set(0.5, 0.5);
-  tex.rotation = Math.PI; // portrait — the monogram runs along the book's long axis
+  tex.rotation = Math.PI / 2; // monogram stacked down the cover, upright from the intro camera
   return tex;
 }
 
