@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#2b1837"/>
+  <path d="M32 16c-4-3-10-4-16-3v32c6-1 12 0 16 3 4-3 10-4 16-3V13c-6-1-12 0-16 3z" fill="none" stroke="#e9b44c" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M32 16v32" stroke="#e9b44c" stroke-width="3"/>
+  <text x="23" y="38" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#f6ecdd" text-anchor="middle">P</text>
+  <text x="41" y="38" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#f6ecdd" text-anchor="middle">J</text>
+</svg>

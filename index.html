@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Priyanka Jha — English Language Teacher · Cambridge · IELTS · Spain</title>
+  <meta name="description" content="Priyanka Jha — English Language Teacher with 7+ years across Spain. Cambridge (KET–CPE), Oxford Test of English, IELTS, Aptis and Trinity GESE exam preparation, Business English, and classrooms from Lugo to Andalucía. Master's in Advanced English Studies (USC).">
+  <meta name="author" content="Priyanka Jha">
+
+  <link rel="canonical" href="https://ipjha.github.io/">
+  <meta name="theme-color" content="#1c0f22">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Priyanka Jha — English Language Teacher · Cambridge · IELTS · Spain">
+  <meta property="og:description" content="7+ years teaching English across Spain — exam preparation (Cambridge, Oxford, IELTS, Aptis, Trinity), Business English, and learners from A1 to C2.">
+  <meta property="og:url" content="https://ipjha.github.io/">
+  <meta property="og:site_name" content="Priyanka Jha">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Priyanka Jha — English Language Teacher">
+  <meta name="twitter:description" content="7+ years teaching English across Spain — Cambridge, Oxford, IELTS, Aptis & Trinity exam prep, Business English, A1–C2.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Priyanka Jha",
+    "url": "https://ipjha.github.io/",
+    "jobTitle": "English Language Teacher",
+    "worksFor": { "@type": "Organization", "name": "Tower Academy" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Lugo", "addressCountry": "ES" },
+    "email": "mailto:pjha2128@gmail.com",
+    "telephone": "+34663467297",
+    "knowsAbout": ["English Language Teaching", "Cambridge English Qualifications", "IELTS", "Aptis", "Trinity GESE", "Oxford Test of English", "Business English", "TEFL", "Lesson Planning", "Classroom Management"],
+    "knowsLanguage": ["en", "es", "fr", "hi"],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Santiago de Compostela" },
+      { "@type": "CollegeOrUniversity", "name": "University of Delhi" }
+    ],
+    "sameAs": ["https://www.linkedin.com/in/priyanka-jha-652b40142"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700&family=Caveat:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- 3D storybook study (whole-page backdrop) -->
+  <div class="scene" id="scene" aria-hidden="true"><canvas id="webgl"></canvas></div>
+
+  <!-- cursor lamplight -->
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+  <!-- scroll progress: a bookmark ribbon down the right edge -->
+  <div class="ribbon" aria-hidden="true">
+    <span class="ribbon__mark" id="scrollMark">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M6 2h12a1 1 0 0 1 1 1v19l-7-4.5L5 22V3a1 1 0 0 1 1-1z"/></svg>
+    </span>
+  </div>
+
+  <!-- intro: the book opens -->
+  <div class="intro" id="intro">
+    <div class="intro__vignette" aria-hidden="true"></div>
+    <div class="intro__hud" aria-hidden="true">
+      <span class="intro__quill">✒</span>
+      <span id="introLine">CHAPTER I · A GIRL WHO LOVED WORDS</span>
+    </div>
+    <div class="intro__page mono" aria-hidden="true">PG&nbsp;<span id="introPage">001</span></div>
+    <button class="intro__skip mono" id="introSkip">SKIP →</button>
+  </div>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__brand" aria-label="Home">
+        <span class="brand__mark" aria-hidden="true">PJ</span>
+        <span class="brand__code" aria-hidden="true">EST. 2017 · ES</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#experience">Chapters</a>
+        <a href="#skills">Chalkboard</a>
+        <a href="#education">Education</a>
+        <a href="#languages">Languages</a>
+        <a href="#contact">Contact</a>
+        <a class="nav__cta" href="Priyanka_Jha_CV.png" target="_blank" rel="noopener">CV ↧</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero__inner">
+      <p class="hero__eyebrow reveal"><span class="dot dot--live" aria-hidden="true"></span>Now teaching in Andalucía, Spain</p>
+
+      <h1 class="hero__name">
+        <span class="hero__line"><span class="hero__word">PRIYANKA</span></span>
+        <span class="hero__line"><span class="hero__word hero__word--outline">JHA</span></span>
+      </h1>
+
+      <p class="hero__role reveal">English Language Teacher — Cambridge · Oxford · IELTS · Aptis · Trinity</p>
+      <p class="hero__sub reveal">She left Delhi with a degree in English and a one-way ticket to Spain.
+        Seven years of teaching later: five towns, hundreds of students from six-year-olds to executives,
+        and one simple belief — <em class="hand">every learner has a story worth telling in English.</em></p>
+
+      <div class="hero__cta reveal">
+        <a class="btn btn--gold" href="#experience">Read her story</a>
+        <a class="btn btn--ghost" href="Priyanka_Jha_CV.png" target="_blank" rel="noopener">Download CV</a>
+      </div>
+
+      <div class="hero__strip mono reveal" aria-hidden="true">
+        <span>ES <b id="clock">--:--:--</b> CET</span>
+        <span class="strip__sep">/</span>
+        <span>7+ YRS · ENGLISH TEACHING</span>
+        <span class="strip__sep">/</span>
+        <span>LEVELS A1 → C2</span>
+        <span class="strip__sep">/</span>
+        <span>TEFL CERTIFIED</span>
+      </div>
+    </div>
+
+    <a class="hero__scroll mono" href="#about" aria-label="Scroll to about">
+      <span>TURN THE PAGE</span><span class="scroll__beam" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track mono">
+      <span>CAMBRIDGE KET · PET · FCE · CAE · CPE&ensp;/&ensp;OXFORD TEST OF ENGLISH&ensp;/&ensp;IELTS&ensp;/&ensp;APTIS GENERAL · TEACHERS · ADVANCED&ensp;/&ensp;TRINITY GESE&ensp;/&ensp;BUSINESS ENGLISH&ensp;/&ensp;DELHI → JAÉN → GRANADA → LUGO → ANDALUCÍA&ensp;/&ensp;</span>
+      <span>CAMBRIDGE KET · PET · FCE · CAE · CPE&ensp;/&ensp;OXFORD TEST OF ENGLISH&ensp;/&ensp;IELTS&ensp;/&ensp;APTIS GENERAL · TEACHERS · ADVANCED&ensp;/&ensp;TRINITY GESE&ensp;/&ensp;BUSINESS ENGLISH&ensp;/&ensp;DELHI → JAÉN → GRANADA → LUGO → ANDALUCÍA&ensp;/&ensp;</span>
+    </div>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <header class="sec__head reveal">
+        <span class="sec__tag mono">01 · PROLOGUE</span>
+        <h2 class="sec__title">About</h2>
+      </header>
+
+      <div class="about">
+        <div class="about__text reveal">
+          <p class="about__lede">A dedicated, passionate educator with <em>7+ years</em> teaching English
+            language and literature — to every age, at every level.</p>
+          <p>She holds a <strong>Master's in Advanced English Studies</strong> from the University of Santiago
+            de Compostela and a <strong>Bachelor's in English</strong> from the University of Delhi — academic
+            depth she pairs with the practical craft of real classrooms: from primary schools in Galicia to
+            exam academies in Andalucía to the training rooms of a multinational factory.</p>
+          <p>Her classes are communicative and student-centred, aligned with <strong>CEFR standards</strong>,
+            and built on innovative methodologies that make learners <em>want</em> to speak. Warm, organised
+            and endlessly curious, she's committed to continuous professional development — and to the idea
+            that a language lesson should feel like a good story.</p>
+          <p class="about__note hand" aria-hidden="true">“teach the student, not the textbook.”</p>
+        </div>
+
+        <div class="about__side">
+          <figure class="polaroid reveal reveal--flip" aria-label="Portrait of Priyanka Jha">
+            <img src="images/priyanka.jpg" alt="Priyanka Jha smiling" width="137" height="137">
+            <figcaption class="hand">hola, I'm Priyanka! 👋</figcaption>
+          </figure>
+
+          <ul class="stats" role="list">
+            <li class="stat reveal" style="--i:0"><b class="stat__num mono" data-count="7" data-suffix="+">0</b><span class="stat__lbl">Years teaching English</span></li>
+            <li class="stat reveal" style="--i:1"><b class="stat__num mono" data-count="10">0</b><span class="stat__lbl">Roles across Spain &amp; remote</span></li>
+            <li class="stat reveal" style="--i:2"><b class="stat__num mono" data-count="5">0</b><span class="stat__lbl">Exam boards prepared for</span></li>
+            <li class="stat reveal" style="--i:3"><b class="stat__num mono" data-count="6">0</b><span class="stat__lbl">Towns called “el aula”</span></li>
+            <li class="stat reveal" style="--i:4"><b class="stat__num mono" data-count="2">0</b><span class="stat__lbl">Degrees in English</span></li>
+            <li class="stat reveal" style="--i:5"><b class="stat__num mono">A1–C2</b><span class="stat__lbl">Every level, every age</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CURRICULUM / TEACHING SPECIALTIES ================= -->
+  <section class="section" id="curriculum">
+    <div class="wrap">
+      <header class="sec__head reveal">
+        <span class="sec__tag mono">02 · THE CURRICULUM</span>
+        <h2 class="sec__title">Specialties</h2>
+        <p class="sec__note">What she teaches — and the official exams she gets students through.</p>
+      </header>
+
+      <div class="courses">
+        <article class="course reveal" style="--i:0">
+          <span class="course__seal" aria-hidden="true">C</span>
+          <h3>Cambridge Exams</h3>
+          <p>Full preparation across the Cambridge English Qualifications ladder — mock exams, formative
+            assessment and feedback sessions until exam day.</p>
+          <ul class="chips chips--level" role="list"><li>KET</li><li>PET</li><li>FCE</li><li>CAE</li><li>CPE</li></ul>
+        </article>
+
+        <article class="course reveal" style="--i:1">
+          <span class="course__seal" aria-hidden="true">O</span>
+          <h3>Oxford Exams</h3>
+          <p>Coaching for the Oxford Test of English — the university-certified, adaptive exam — with
+            targeted practice per module.</p>
+          <ul class="chips chips--level" role="list"><li>Oxford Test of English</li></ul>
+        </article>
+
+        <article class="course reveal" style="--i:2">
+          <span class="course__seal" aria-hidden="true">I</span>
+          <h3>IELTS</h3>
+          <p>Band-focused preparation — reading and listening strategy, essay structure, and speaking
+            practice that sounds like you on your best day.</p>
+          <ul class="chips chips--level" role="list"><li>Academic</li><li>Exam strategy</li></ul>
+        </article>
+
+        <article class="course reveal" style="--i:3">
+          <span class="course__seal" aria-hidden="true">A</span>
+          <h3>Aptis</h3>
+          <p>All three variants of the British Council's exam — including Aptis for Teachers, for
+            educators certifying their own English.</p>
+          <ul class="chips chips--level" role="list"><li>General</li><li>For Teachers</li><li>Advanced</li></ul>
+        </article>
+
+        <article class="course reveal" style="--i:4">
+          <span class="course__seal" aria-hidden="true">T</span>
+          <h3>Trinity</h3>
+          <p>Graded Examinations in Spoken English — building the conversational confidence the GESE
+            interview format demands.</p>
+          <ul class="chips chips--level" role="list"><li>GESE</li></ul>
+        </article>
+
+        <article class="course reveal" style="--i:5">
+          <span class="course__seal" aria-hidden="true">B</span>
+          <h3>Business English</h3>
+          <p>Email etiquette, report writing, presentations and professional correspondence — plus role-play
+            that simulates the real meeting, not the textbook one.</p>
+          <ul class="chips chips--level" role="list"><li>Communication</li><li>Email etiquette</li><li>Reports</li><li>Presentations</li></ul>
+        </article>
+
+        <article class="course reveal" style="--i:6">
+          <span class="course__seal" aria-hidden="true">G</span>
+          <h3>General English</h3>
+          <p>Communicative, student-centred lessons aligned with CEFR standards — for every learner from
+            first words to full fluency.</p>
+          <ul class="chips chips--level" role="list"><li>A1</li><li>A2</li><li>B1</li><li>B2</li><li>C1</li><li>C2</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE / CHAPTERS ================= -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <header class="sec__head reveal">
+        <span class="sec__tag mono">03 · THE CHAPTERS</span>
+        <h2 class="sec__title">Experience</h2>
+        <p class="sec__note">Seven years, five towns, one map of Spain slowly filling with pins.</p>
+      </header>
+
+      <!-- the journey, sketched -->
+      <div class="mapcard reveal" aria-hidden="true">
+        <canvas id="mapCanvas"></canvas>
+        <span class="mapcard__lbl mono">THE JOURNEY · DELHI → JAÉN → GRANADA → LUGO → ANDALUCÍA</span>
+      </div>
+
+      <ol class="story" role="list" id="story">
+        <span class="story__quill" id="storyQuill" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.24 3.76c-3.87-1.5-9.06.06-12.2 3.2C4.9 10.1 3.7 14.4 4.3 17.58l-1.6 1.6a1 1 0 1 0 1.42 1.41l1.6-1.6c3.18.61 7.47-.6 10.61-3.74 3.14-3.14 4.7-8.33 3.2-12.2a1.1 1.1 0 0 0-.29-.29zM8.6 15.4c2.2-4.3 5.6-7.3 8.9-8.9-4.06 1.06-7.84 4.84-8.9 8.9z"/></svg>
+        </span>
+
+        <li class="leg reveal" style="--i:0">
+          <span class="leg__node leg__node--now" aria-hidden="true"></span>
+          <div class="leg__card">
+            <div class="leg__firm">
+              <span class="leg__chapter mono">CHAPTER VI · ANDALUCÍA, AGAIN</span>
+              <span class="leg__stay mono">SEP 2024 — PRESENT · JAÉN PROVINCE</span>
+            </div>
+
+            <div class="role">
+              <div class="leg__top">
+                <h3>English Teacher</h3>
+                <span class="leg__when mono">SEP 2024 — PRESENT</span>
+              </div>
+              <p class="leg__org">Tower Academy · Torredonjimeno, Spain</p>
+              <ul class="leg__points">
+                <li>Teach General and Exam English to learners of all levels (A1–C2) following the Cambridge English curriculum</li>
+                <li>Design and deliver communicative, student-centred lessons aligned with CEFR standards</li>
+                <li>Assess progress through mock exams, formative assessments and feedback sessions</li>
+                <li>Specialise in exam preparation: Cambridge (A2–C2), Oxford Test of English, IELTS, Aptis (General, for Teachers, Advanced) and Trinity GESE</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="leg__top">
+                <h3>Business English Trainer</h3>
+                <span class="leg__when mono">SEP 2024 — PRESENT</span>
+              </div>
+              <p class="leg__org">Valeo · Martos, Spain</p>
+              <ul class="leg__points">
+                <li>Train professionals in email etiquette, report writing and professional correspondence</li>
+                <li>Develop role-play activities simulating real-world business scenarios</li>
+                <li>Coach public speaking, confidence-building and professional pronunciation; prepare students for Business English exams</li>
+                <li>Help learners improve cross-cultural communication and business etiquette for international settings</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="leg__top">
+                <h3>Online English Teacher</h3>
+                <span class="leg__when mono">SEP 2024 — JUL 2025</span>
+              </div>
+              <p class="leg__org">The English Balcony · Jaén, Andalucía (online)</p>
+              <ul class="leg__points">
+                <li>Taught live online English classes to learners across Spain — general and conversational English at all levels</li>
+                <li>Adapted communicative classroom methods to the virtual classroom, keeping lessons interactive and student-centred</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="leg reveal" style="--i:1">
+          <span class="leg__node" aria-hidden="true"></span>
+          <div class="leg__card">
+            <div class="leg__firm">
+              <span class="leg__chapter mono">CHAPTER V · THE LUGO YEAR</span>
+              <span class="leg__stay mono">OCT 2023 — JUN 2024 · GALICIA</span>
+            </div>
+
+            <div class="role">
+              <div class="leg__top">
+                <h3>English Teacher</h3>
+                <span class="leg__when mono">OCT 2023 — MAY 2024</span>
+              </div>
+              <p class="leg__org">Little Robin English Academy · Lugo, Spain</p>
+              <ul class="leg__points">
+                <li>Prepared students for Cambridge English Qualifications (KET, PET, FCE, CAE, CPE, IELTS)</li>
+                <li>Prepared candidates for the Aptis General, Aptis for Teachers and Aptis Advanced exams</li>
+                <li>Ran one-to-one Business English classes for professionals across industries — case studies, business news and real-world materials</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="leg__top">
+                <h3>English Language Assistant</h3>
+                <span class="leg__when mono">OCT 2023 — JUN 2024</span>
+              </div>
+              <p class="leg__org">CEIP Anexa · Lugo, Spain</p>
+              <ul class="leg__points">
+                <li>Helped teachers develop creative, inspiring and exciting curriculums for classes</li>
+                <li>Assisted in adapting curriculum to suit non-native language learners</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="leg__top">
+                <h3>Substitute English Teacher</h3>
+                <span class="leg__when mono">MAY 2024 — JUN 2024</span>
+              </div>
+              <p class="leg__org">Total English · Lugo, Spain</p>
+              <ul class="leg__points">
+                <li>Planned and delivered engaging English lessons at every proficiency level (A1–C2), adapting materials to different learning styles</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="leg reveal" style="--i:2">
+          <span class="leg__node" aria-hidden="true"></span>
+          <div class="leg__card">
+            <div class="leg__top">
+              <h3>English Language Assistant</h3>
+              <span class="leg__when mono">OCT 2022 — MAY 2023</span>
+            </div>
+            <p class="leg__org">CEIP Santa María · Lugo, Spain</p>
+            <span class="leg__chapter mono">CHAPTER IV · NORTH TO GALICIA</span>
+            <ul class="leg__points">
+              <li>Graded exam papers and identified corrections to enable learning from mistakes</li>
+              <li>Recorded student development for helpful progress reporting</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="leg reveal" style="--i:3">
+          <span class="leg__node" aria-hidden="true"></span>
+          <div class="leg__card">
+            <div class="leg__top">
+              <h3>English Language Assistant</h3>
+              <span class="leg__when mono">OCT 2021 — OCT 2022</span>
+            </div>
+            <p class="leg__org">IES Pedro Soto de Rojas · Granada, Spain</p>
+            <span class="leg__chapter mono">CHAPTER III · GRANADA</span>
+            <ul class="leg__points">
+              <li>Tailored language instruction to suit varying age and competence levels</li>
+              <li>Used visual aids and object pictures to help students grasp translations intuitively</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="leg reveal" style="--i:4">
+          <span class="leg__node" aria-hidden="true"></span>
+          <div class="leg__card">
+            <div class="leg__top">
+              <h3>Language Assistant</h3>
+              <span class="leg__when mono">OCT 2020 — MAY 2021</span>
+            </div>
+            <p class="leg__org">IES Santa Teresa · Jaén, Spain</p>
+            <span class="leg__chapter mono">CHAPTER II · FIRST CLASSROOM IN SPAIN</span>
+            <ul class="leg__points">
+              <li>Evaluated student language development through verbal and written assessments, with extra support for struggling pupils</li>
+              <li>Created reports of student grades and progress for personal, student and parent review</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="leg reveal" style="--i:5">
+          <span class="leg__node" aria-hidden="true"></span>
+          <div class="leg__card">
+            <div class="leg__top">
+              <h3>Language Interpreter</h3>
+              <span class="leg__when mono">MAR 2019 — JUL 2022</span>
+            </div>
+            <p class="leg__org">Aktech Labs · Remote</p>
+            <span class="leg__chapter mono">CHAPTER I · WHERE IT BEGAN</span>
+            <ul class="leg__points">
+              <li>Adapted computer-assisted translations into meaningful text</li>
+              <li>Built quick rapport with clients through verbal and non-verbal communication techniques</li>
+              <li>Offered face-to-face interpreting services for clients with limited English abilities</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS / THE CHALKBOARD ================= -->
+  <section class="section section--board" id="skills">
+    <div class="wrap">
+      <header class="sec__head reveal">
+        <span class="sec__tag mono">04 · ON THE CHALKBOARD</span>
+        <h2 class="sec__title">Skills</h2>
+      </header>
+
+      <div class="chalk reveal" aria-hidden="true"><canvas id="chalkCanvas"></canvas></div>
+
+      <div class="panels">
+        <div class="panel panel--chalk reveal" style="--i:0">
+          <h3 class="panel__name hand">The craft</h3>
+          <ul class="chips" role="list"><li data-icon="pen">Lesson planning &amp; delivery</li><li data-icon="heart">Student-centred approach</li><li data-icon="users">Classroom management</li><li data-icon="check">Assessment &amp; feedback</li><li data-icon="layers">Teaching material development</li><li data-icon="star">Extracurricular coordination</li></ul>
+        </div>
+        <div class="panel panel--chalk reveal" style="--i:1">
+          <h3 class="panel__name hand">The person</h3>
+          <ul class="chips" role="list"><li data-icon="chat">Strong communicator</li><li data-icon="globe">Cross-cultural awareness</li><li data-icon="ear">Good listener</li><li data-icon="spark">Adaptable &amp; reliable</li><li data-icon="bulb">Critical thinking</li><li data-icon="target">Decision-making</li><li data-icon="users">Team oriented</li></ul>
+        </div>
+        <div class="panel panel--chalk reveal" style="--i:2">
+          <h3 class="panel__name hand">The tools</h3>
+          <ul class="chips" role="list"><li data-icon="doc">Microsoft Word · PowerPoint · Office</li><li data-icon="cloud">Google Drive &amp; online tools</li><li data-icon="share">Social media &amp; EdTech</li><li data-icon="monitor">Instagram · Facebook · Skype · LinkedIn</li><li data-icon="clipboard">Class setup &amp; behaviour management</li><li data-icon="calendar">Organisational &amp; planning skills</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION / LIBRARY CARDS ================= -->
+  <section class="section" id="education">
+    <div class="wrap">
+      <header class="sec__head reveal">
+        <span class="sec__tag mono">05 · THE LIBRARY</span>
+        <h2 class="sec__title">Education</h2>
+      </header>
+
+      <div class="cards">
+        <article class="libcard reveal reveal--flip" style="--i:0">
+          <div class="libcard__head">
+            <span class="libcard__label mono">POSTGRADUATE · RETURNED MAY 2023</span>
+            <h3>Master's, Advanced English Studies and its Application</h3>
+            <p class="libcard__school">University of Santiago de Compostela (USC) · Spain — May '23</p>
+          </div>
+          <p class="libcard__body">Specialised in <strong>English Language Linguistics</strong> — English
+            Language Teaching and Acquisition with an emphasis on effective teaching-learning methodologies.
+            Pedagogical theory integrated with practical application: strategies for student engagement,
+            assessment, and building inclusive learning environments.</p>
+          <div class="libcard__stamps mono" aria-hidden="true">
+            <span class="stamp">USC · MAY 2023</span>
+            <span class="stamp stamp--red">ENGLISH LINGUISTICS</span>
+          </div>
+        </article>
+
+        <article class="libcard reveal reveal--flip" style="--i:1">
+          <div class="libcard__head">
+            <span class="libcard__label mono">UNDERGRADUATE · RETURNED MAY 2017</span>
+            <h3>Bachelor of Arts, English</h3>
+            <p class="libcard__school">University of Delhi · India — May '17</p>
+          </div>
+          <p class="libcard__body">English language and literature — where the love of words became a degree,
+            and the degree became a plan to teach it to the world.</p>
+          <div class="libcard__stamps mono" aria-hidden="true">
+            <span class="stamp">DU · MAY 2017</span>
+          </div>
+        </article>
+
+        <article class="libcard reveal reveal--flip" style="--i:2">
+          <div class="libcard__head">
+            <span class="libcard__label mono">LANGUAGE DIPLOMA · 2019</span>
+            <h3>B2 Spanish Language</h3>
+            <p class="libcard__school">Instituto Cervantes — 2019</p>
+          </div>
+          <p class="libcard__body">Upper-intermediate Spanish, certified before the move — because a good
+            language teacher never stops being a language student.</p>
+          <div class="libcard__stamps mono" aria-hidden="true">
+            <span class="stamp">DELE · B2</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="seals reveal">
+        <span class="sealbadge" title="TEFL Certified"><b>TEFL</b><i>CERTIFIED</i></span>
+        <span class="sealbadge" title="First Aid Certified"><b>FIRST AID</b><i>CERTIFIED</i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LANGUAGES / PHRASEBOOK ================= -->
+  <section class="section" id="languages">
+    <div class="wrap">
+      <header class="sec__head reveal">
+        <span class="sec__tag mono">06 · THE PHRASEBOOK</span>
+        <h2 class="sec__title">Languages</h2>
+      </header>
+
+      <div class="phrases">
+        <article class="phrase reveal" style="--i:0">
+          <div class="phrase__head">
+            <h3>English</h3>
+            <span class="phrase__level mono">FIRST LANGUAGE</span>
+          </div>
+          <p class="phrase__line hand">“Every learner has a story worth telling.”</p>
+          <div class="cefr" role="img" aria-label="English: native level">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+            <span class="cefr__lbl mono">NATIVE</span>
+          </div>
+        </article>
+
+        <article class="phrase reveal" style="--i:1">
+          <div class="phrase__head">
+            <h3>Spanish</h3>
+            <span class="phrase__level mono">UPPER INTERMEDIATE · B2</span>
+          </div>
+          <p class="phrase__line hand">“Cada alumno tiene una historia que contar.”</p>
+          <div class="cefr" role="img" aria-label="Spanish: B2, upper intermediate">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i>
+            <span class="cefr__lbl mono">B2 · CERVANTES</span>
+          </div>
+        </article>
+
+        <article class="phrase reveal" style="--i:2">
+          <div class="phrase__head">
+            <h3>French</h3>
+            <span class="phrase__level mono">BEGINNER · A1</span>
+          </div>
+          <p class="phrase__line hand">“Chaque élève a une histoire à raconter.”</p>
+          <div class="cefr" role="img" aria-label="French: A1, beginner">
+            <i class="on"></i><i></i><i></i><i></i><i></i><i></i>
+            <span class="cefr__lbl mono">A1 · ET EN COURS</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / OFFICE HOURS ================= -->
+  <section class="section section--contact" id="contact">
+    <div class="wrap">
+      <header class="sec__head reveal">
+        <span class="sec__tag mono">07 · OFFICE HOURS</span>
+        <h2 class="sec__title">Contact</h2>
+      </header>
+
+      <div class="postcard reveal reveal--flip">
+        <div class="postcard__left">
+          <p class="postcard__hand hand">Looking for an English teacher who'll get your students —
+            or your team — talking? Drop me a line. First class is always a conversation. ✍️</p>
+          <p class="postcard__from mono">— PRIYANKA · LUGO, ES</p>
+        </div>
+        <div class="postcard__divider" aria-hidden="true"></div>
+        <div class="postcard__right">
+          <span class="postcard__stamp" aria-hidden="true">
+            <canvas id="stampCanvas"></canvas>
+          </span>
+          <span class="postcard__postmark mono" aria-hidden="true">EST · 2017 · DEL→ES</span>
+          <address class="postcard__lines">
+            <a class="postcard__mail" href="mailto:pjha2128@gmail.com">pjha2128@gmail.com</a>
+            <a href="tel:+34663467297" class="mono">+34 663 467 297</a>
+            <a href="https://www.linkedin.com/in/priyanka-jha-652b40142" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </address>
+          <div class="postcard__cta">
+            <a class="btn btn--gold" href="mailto:pjha2128@gmail.com">Say hello</a>
+            <a class="btn btn--ghost" href="Priyanka_Jha_CV.png" target="_blank" rel="noopener">CV ↧</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="contact__loc mono reveal">43.0121° N, 7.5558° W · LUGO, SPAIN</p>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner mono">
+      <span>© 2026 PRIYANKA JHA</span>
+      <span class="hand footer__hand">fin. — but the story continues</span>
+      <span>LUGO · ESPAÑA</span>
+    </div>
+  </footer>
+
+  <script type="importmap">
+    { "imports": { "three": "./assets/vendor/three.module.min.js" } }
+  </script>
+  <script type="module" src="assets/js/scene.js"></script>
+  <script type="module" src="assets/js/widgets.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

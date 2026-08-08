@@ -1,0 +1,12 @@
+{
+  "name": "Priyanka Jha — English Language Teacher",
+  "short_name": "Priyanka Jha",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1c0f22",
+  "theme_color": "#1c0f22",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "favicon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
