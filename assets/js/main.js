@@ -172,6 +172,49 @@
     barTick();
   }
 
+  /* ---------------------------------------------- toast */
+  var toastEl = null;
+  var toastTimer = 0;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'toast mono';
+      toastEl.setAttribute('role', 'status');
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg;
+    toastEl.classList.add('toast--in');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('toast--in'); }, 2600);
+  }
+
+  var ES = document.documentElement.lang === 'es';
+
+  /* mailto can fail silently on desktops with no mail app — always leave
+     the visitor holding the address as well */
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText('pjha2128@gmail.com').then(function () {
+        toast(ES ? '✓ correo copiado — pjha2128@gmail.com' : '✓ email copied — pjha2128@gmail.com');
+      }, function () {});
+    });
+  });
+
+  /* share button: native share sheet where it exists, copy-link elsewhere */
+  document.querySelectorAll('[data-share]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var url = location.origin + location.pathname;
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: url }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () {
+          toast(ES ? '✓ enlace copiado — compártelo donde quieras' : '✓ link copied — share it anywhere');
+        }, function () {});
+      }
+    });
+  });
+
   /* ---------------------------------------------- quill down the chapters */
   var story = document.getElementById('story');
   var quill = document.getElementById('storyQuill');

@@ -104,16 +104,15 @@ function coverTexture() {
 
   g.fillStyle = '#e9b44c';
   g.textAlign = 'center';
-  g.font = '600 170px Georgia, serif';
-  g.fillText('P', 256, 240);
-  g.fillText('J', 256, 465);
-  g.font = '60px Georgia, serif';
-  g.fillText('·', 256, 330);
-  g.font = 'italic 32px Georgia, serif';
-  g.fillText('her story so far', 256, 560);
+  g.font = '600 150px Georgia, serif';
+  g.fillText('P·J', 256, 330);
+  g.font = 'italic 30px Georgia, serif';
+  g.fillText('her story so far', 256, 400);
+  g.font = '20px Georgia, serif';
+  g.fillText('— · —', 256, 470);
   const tex = new THREE.CanvasTexture(c);
   tex.center.set(0.5, 0.5);
-  tex.rotation = Math.PI / 2; // monogram stacked down the cover, upright from the intro camera
+  tex.rotation = 0; // title runs along the book's long axis
   return tex;
 }
 
@@ -408,6 +407,8 @@ const letters = [];
     const a0 = Math.random() * Math.PI * 2;
     letters.push({
       s,
+      ch,
+      kick: new THREE.Vector3(),          // impulse from a startled click
       r: 4 + Math.random() * 10,          // orbit radius
       h: -2.5 + Math.random() * 8,        // height offset from vortex centre
       a0,                                 // start angle (phase for shimmer/bob)
@@ -430,10 +431,11 @@ function placeLetter(L, t, dt, swirl) {
   const y = THREE.MathUtils.lerp(BOOK_POS.y + 0.8, VORTEX.y + L.h, b)
     + Math.sin(t * L.bobF + L.a0) * L.bobA * b;
   L.s.position.set(
-    VORTEX.x + Math.cos(angle) * r,
-    y,
-    VORTEX.z + Math.sin(angle) * r * 0.72
+    VORTEX.x + Math.cos(angle) * r + L.kick.x,
+    y + L.kick.y,
+    VORTEX.z + Math.sin(angle) * r * 0.72 + L.kick.z
   );
+  L.kick.multiplyScalar(Math.exp(-dt * 2.2));
   L.s.material.opacity = b * (0.55 + 0.35 * Math.sin(t * 1.4 + L.a0 * 3));
   L.s.material.rotation = Math.sin(t * 0.6 + L.a0) * 0.25;
   L.s.scale.setScalar(L.baseScale * (0.4 + 0.6 * b));
@@ -541,16 +543,19 @@ const T_PRINT0 = 3.9;  // hero text starts inking
 const T_PRINT1 = 5.7;
 const T_END = 6.4;
 
-const HUD_LINES = [
-  [0.0, 'CHAPTER I · A GIRL WHO LOVED WORDS'],
-  [2.15, 'SHE PACKED HER BOOKS AND FLEW WEST'],
-  [4.15, 'SEVEN YEARS · FIVE TOWNS · A THOUSAND LESSONS'],
-];
-
 let introOn = !REDUCED;
 let introT = 0;
 const introEl = document.getElementById('intro');
 const introLine = document.getElementById('introLine');
+
+/* the ES page carries its own captions in data-lines */
+const HUD_LINES = (introLine && introLine.dataset.lines)
+  ? JSON.parse(introLine.dataset.lines)
+  : [
+    [0.0, 'CHAPTER I · A GIRL WHO LOVED WORDS'],
+    [2.15, 'SHE PACKED HER BOOKS AND FLEW WEST'],
+    [4.15, 'SEVEN YEARS · FIVE TOWNS · A THOUSAND LESSONS'],
+  ];
 const introPage = document.getElementById('introPage');
 const heroInner = document.querySelector('.hero__inner');
 
@@ -688,6 +693,64 @@ if (!TOUCH) {
   }, { passive: true });
 }
 
+/* a click (or tap) startles the moths near the cursor */
+const _proj = new THREE.Vector3();
+if (!REDUCED) {
+  addEventListener('pointerdown', (e) => {
+    if (introOn) return;
+    const nx = (e.clientX / innerWidth) * 2 - 1;
+    const ny = -(e.clientY / innerHeight) * 2 + 1;
+    for (const L of letters) {
+      _proj.copy(L.s.position).project(camera);
+      if (_proj.z > 1 || _proj.z < -1) continue; // behind the camera
+      const dx = _proj.x - nx;
+      const dy = _proj.y - ny;
+      const d = Math.hypot(dx, dy);
+      if (d > 0.32) continue;
+      const push = (0.32 - d) * 14;
+      L.kick.x += (dx / (d + 0.01)) * push * 0.6;
+      L.kick.y += push * 0.5;
+      L.kick.z += (Math.random() - 0.5) * push * 0.4;
+    }
+  }, { passive: true });
+}
+
+/* type “hola” anywhere — the moths spell her name for a moment */
+const SPELL = 'PRIYANKA';
+const SPELL_HOLD = 5;
+let spellT = 0;
+const spellSlots = [];
+function startSpell() {
+  if (spellT > 0) return;
+  spellSlots.length = 0;
+  const used = new Set();
+  for (let i = 0; i < SPELL.length; i++) {
+    const ch = SPELL[i];
+    const pick =
+      letters.find((L) => !used.has(L) && L.ch === ch) ||
+      letters.find((L) => !used.has(L) && L.ch.toUpperCase() === ch) ||
+      letters.find((L) => !used.has(L));
+    used.add(pick);
+    spellSlots.push({
+      L: pick,
+      target: new THREE.Vector3(
+        VORTEX.x + (i - (SPELL.length - 1) / 2) * 2.1,
+        VORTEX.y + 1.5,
+        VORTEX.z + 5
+      ),
+    });
+  }
+  spellT = SPELL_HOLD;
+}
+if (!REDUCED) {
+  let typed = '';
+  addEventListener('keydown', (e) => {
+    if (e.key.length !== 1) return;
+    typed = (typed + e.key.toLowerCase()).slice(-6);
+    if (typed.endsWith('hola')) startSpell();
+  });
+}
+
 /* scroll state: the camera drifts to a new vantage for every chapter */
 const STAGE_DEFS = [
   ['home',       [0, 4.5, 24],    [7, 3.2, -20],   1.0],  // the study at large
@@ -775,6 +838,18 @@ function tick() {
     // scrolling stirs them, but only so much
     const swirl = 0.42 + Math.min(scrollVel * 0.06, 1.0);
     for (const L of letters) placeLetter(L, t, dt, swirl);
+
+    // “hola” formation: ease into the name, hold, ease back to the vortex
+    if (spellT > 0) {
+      spellT -= dt;
+      const hold = clamp01((SPELL_HOLD - spellT) / 0.9) * clamp01(spellT / 0.9);
+      for (const slot of spellSlots) {
+        slot.L.s.position.lerp(slot.target, hold);
+        slot.L.s.material.opacity = Math.max(slot.L.s.material.opacity, hold);
+        slot.L.s.material.rotation *= 1 - hold;
+        slot.L.s.scale.setScalar(slot.L.baseScale * (1 + hold * 0.5));
+      }
+    }
 
     // an idle page turns every few seconds (sooner when scrolling fast)
     if (ambientFlip <= 0) {

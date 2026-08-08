@@ -251,6 +251,11 @@ body.intro-lock .ribbon { opacity: 0; pointer-events: none; }
   color: var(--gold) !important;
   margin-left: 6px;
 }
+.nav__lang {
+  font-size: 11px !important;
+  letter-spacing: .14em;
+  border: 1px solid var(--line);
+}
 .nav__cta:hover { background: rgba(233, 180, 76, .12) !important; }
 
 .nav__burger {
@@ -377,6 +382,11 @@ body.intro-lock .ribbon { opacity: 0; pointer-events: none; }
   box-shadow: 0 6px 24px rgba(233, 180, 76, .25);
 }
 .btn--gold:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(233, 180, 76, .38); }
+button.btn {
+  font-family: var(--body);
+  background: none;
+  cursor: pointer;
+}
 .btn--ghost {
   border: 1px solid var(--line);
   color: var(--ink);
@@ -1089,3 +1099,103 @@ body.intro-lock .ribbon { opacity: 0; pointer-events: none; }
   color: var(--muted);
 }
 .footer__hand { font-size: 20px; letter-spacing: 0; color: var(--gold); }
+
+/* ---------------------------------------------- toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 16px);
+  z-index: 70;
+  background: var(--gold);
+  color: #2a1420;
+  font-size: 12px;
+  letter-spacing: .06em;
+  padding: 11px 20px;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .3s cubic-bezier(.2, .8, .2, 1);
+}
+.toast--in { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------------------------------------------- print: a clean résumé
+   Ctrl+P turns the storybook into a quiet, ink-friendly document —
+   no scene, no theatre, just the facts in reading order. */
+@media print {
+  :root {
+    --ink: #111;
+    --muted: #444;
+    --gold: #7a5a1e;
+    --line: #bbb;
+  }
+  body {
+    background: #fff !important;
+    color: #111;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+  body::before { display: none; }
+
+  .scene, .spotlight, .ribbon, .intro, .nav, .ticker,
+  .hero__cta, .hero__scroll, .hero__eyebrow, .postcard__cta, .postcard__stamp,
+  .postcard__postmark, .mapcard, .chalk, .story__quill, .polaroid figcaption,
+  .about__note, .phrase__line, .footer__hand { display: none !important; }
+
+  main { z-index: auto; }
+  .hero { min-height: 0; padding: 0 0 12pt; }
+  .hero__inner { mask-image: none !important; -webkit-mask-image: none !important; }
+  .hero__name { font-size: 28pt; color: #111; }
+  .hero__word--outline { color: #111; -webkit-text-stroke: 0; }
+  .hero__role { color: #333; font-size: 13pt; }
+  .hero__sub { color: #444; max-width: none; }
+  .hero__strip { color: #444; }
+  .hero__strip b { color: #111; }
+
+  .section { padding: 14pt 0 4pt; }
+  .section--board .wrap {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0 24px;
+  }
+  .sec__head { margin-bottom: 8pt; }
+  .sec__tag { color: #666; border-color: #bbb; background: none; }
+  .sec__title { font-size: 17pt; color: #111; }
+  .sec__title .ch { opacity: 1 !important; transform: none !important; }
+  .sec__note { color: #555; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+
+  .stat, .course, .leg__card, .panel--chalk, .libcard, .phrase, .postcard {
+    background: none !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    color: #111 !important;
+    break-inside: avoid;
+  }
+  .stat__num, .leg__when, .leg__chapter, .chips--level li { color: #7a5a1e !important; }
+  .stat__lbl, .leg__org, .leg__points li, .course p, .libcard__school,
+  .about__text p + p, .phrase__level, .leg__stay { color: #444 !important; }
+  .about__lede, .about__lede em { color: #111; }
+  .panel__name { color: #111; }
+  .chips li { border-color: #ccc; background: none; color: #333; }
+  .chip-icon, .course__seal, .sealbadge { display: none !important; }
+  .cefr i { background: #ddd; }
+  .cefr i.on { background: #7a5a1e; box-shadow: none; }
+  .cefr__lbl { color: #555; }
+  .libcard { background-image: none !important; }
+  .libcard::before { display: none; }
+  .stamp, .stamp--red { color: #555; border-color: #999; transform: none; }
+
+  .postcard { color: #111 !important; }
+  .postcard__hand { color: #111; font-size: 13pt; }
+  .postcard__lines { margin-top: 8pt; }
+  .postcard__lines a { color: #111; border: 0; }
+  .contact__loc { color: #555; }
+
+  .footer { border-top: 1px solid #ccc; background: none; }
+  .footer__inner { color: #555; }
+
+  a { text-decoration: none; }
+}
